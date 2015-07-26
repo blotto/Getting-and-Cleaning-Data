@@ -19,4 +19,4 @@ The purpose of this project is to demonstrate the ability to collect, work with,
 
 # Details
 
-See [CodeBook.md](https://www.google.com)
+See [CodeBook.md](https://github.com/blotto/Getting-and-Cleaning-Data/blob/master/CodeBook.md)
