@@ -55,13 +55,21 @@ Only the mean and standard deviation from the data set are required.  A basic re
 
 ##  3. Humanize labels
 
-The labeling is a bit cryptic.  In order to make them more readable some more regex was used to find and replace more obscure test with a bit more human friendly context.  For example:
+The labeling is a bit cryptic.  In order to make them more readable some more regex was used to find and replace more obscure text with a bit more human friendly context.  For example:
 
 * "std" transformed to  "StandardDev"
 * "Mag" transformed to  "Magnitude"
 
 ## 4. Finalized data
 
-The data was tidied for averages on each activity per test subject.  ```aggregate``` function was used for this purpose.  This data frame is the exported as tidyData.txt.
+The data was tidied for averages on each activity per test subject.  ```aggregate``` function was used for this purpose.  
+
+```R
+tidyData <- aggregate(presentableData[ ,names(presentableData) != c('aId','sId', 'aType')],
+                      by=list(aId = presentableData$aId, sId = presentableData$sId),
+                      mean)
+```
+
+This data frame is then exported as tidyData.txt.
 
 
